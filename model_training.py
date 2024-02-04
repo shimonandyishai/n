@@ -8,9 +8,8 @@ from sklearn.impute import SimpleImputer
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import classification_report
 import pickle
-
-# Path to the heart dataset
-heart_data_path = "C:\\Users\\lance\\OneDrive\\Desktop\\Sultana\\Capstone\\DATA\\heart.csv"
+# Relative path to the heart dataset from the model_training.py script
+heart_data_path = "data/heart.csv"
 
 # Load the heart dataset
 heart_data = pd.read_csv(heart_data_path)
@@ -60,5 +59,5 @@ y_pred = model.predict(X_test)
 print(classification_report(y_test, y_pred))
 
 # Save the trained model to a .pkl file
-with open('heart_model.pkl', 'wb') as file:
+with open('models/model.pkl', 'wb') as file:
     pickle.dump(model, file)
