@@ -26,7 +26,9 @@ st.title('Heart Health Analysis Dashboard')
 st.markdown("A comprehensive tool for analyzing and predicting heart health risks.")
 
 # Load your trained model
-model_path = 'model.pkl'  # Since it's in the same directory as app.py
+# Load your trained model
+model_path = 'model.pkl'  # Updated to relative path
+model = None
 try:
     with open(model_path, 'rb') as file:
         model = pickle.load(file)
@@ -34,9 +36,9 @@ except Exception as e:
     st.error(f"An error occurred while loading the model: {e}")
 
 # Load heart data file
-@st.cache(allow_output_mutation=True)
 def load_data():
-    return pd.read_csv('data/heart.csv')  # No need for the r prefix
+    # Use a relative path from the Streamlit app script to the CSV file
+    return pd.read_csv('data/heart.csv')
 
 data_heart = load_data()
 
