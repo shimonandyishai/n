@@ -26,8 +26,7 @@ st.title('Heart Health Analysis Dashboard')
 st.markdown("A comprehensive tool for analyzing and predicting heart health risks.")
 
 # Load your trained model
-model_path = 'C:\\Users\\lance\\OneDrive\\Desktop\\model.pkl'
-model = None
+model_path = 'model.pkl'  # Since it's in the same directory as app.py
 try:
     with open(model_path, 'rb') as file:
         model = pickle.load(file)
@@ -35,9 +34,9 @@ except Exception as e:
     st.error(f"An error occurred while loading the model: {e}")
 
 # Load heart data file
-@st.cache_data
+@st.cache(allow_output_mutation=True)
 def load_data():
-    return pd.read_csv(r'C:\Users\lance\OneDrive\Desktop\Sultana\Capstone\DATA\heart.csv')
+    return pd.read_csv('data/heart.csv')  # No need for the r prefix
 
 data_heart = load_data()
 
