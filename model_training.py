@@ -9,6 +9,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import classification_report
 import pickle
 # Relative path to the heart dataset from the model_training.py script
+# Path to the heart dataset
 heart_data_path = "data/heart.csv"
 
 # Load the heart dataset
