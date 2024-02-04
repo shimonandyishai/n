@@ -26,7 +26,7 @@ st.title('Heart Health Analysis Dashboard')
 st.markdown("A comprehensive tool for analyzing and predicting heart health risks.")
 
 # Load your trained model
-model_path = 'C:\\Users\\lance\\OneDrive\\Desktop\\model.pkl'
+model_path = 'models/model.pkl'  # Updated to relative path
 model = None
 try:
     with open(model_path, 'rb') as file:
@@ -37,7 +37,7 @@ except Exception as e:
 # Load heart data file
 @st.cache_data
 def load_data():
-    return pd.read_csv(r'C:\Users\lance\OneDrive\Desktop\Sultana\Capstone\DATA\heart.csv')
+    return pd.read_csv('data/heart.csv')  # Updated to relative path
 
 data_heart = load_data()
 
