@@ -10,7 +10,7 @@ from sklearn.metrics import classification_report
 import pickle
 # Relative path to the heart dataset from the model_training.py script
 # Path to the heart dataset
-heart_data_path = "data/heart.csv"
+heart_data_path = "data/heart.csv"  # Relative path to the CSV file
 
 # Load the heart dataset
 heart_data = pd.read_csv(heart_data_path)
